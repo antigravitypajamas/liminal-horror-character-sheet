@@ -11,10 +11,12 @@ h2 {
 .left-side {
   flex: flex-grow;
   margin-right: 1rem;
+  margin-top: 3rem;
 }
 
 .right-side {
   flex: flex-grow;
+  width: 100%;
 }
 
 .armor-and-stability {
@@ -33,4 +35,19 @@ h2 {
 
 .deprived {
   margin: 0 12px;
+}
+
+.inventory {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+}
+
+.inventory h3 {
+  margin-top: 0px;
+}
+
+.inventory-item {
+  flex: flex-grow;
+  width: 100%;
 }

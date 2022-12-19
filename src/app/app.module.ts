@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LabelAndInputComponent } from './label-and-input/label-and-input.component';
 import { BackgroundComponent } from './background/background.component';
 import { CharacterStatComponent } from './character-stat/character-stat.component';
+import { InventorySlotComponent } from './inventory-slot/inventory-slot.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CharacterStatComponent } from './character-stat/character-stat.componen
     LabelAndInputComponent,
     BackgroundComponent,
     CharacterStatComponent,
+    InventorySlotComponent,
   ],
   imports: [
     BrowserModule,

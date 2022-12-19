@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-flow: row;
+}
+
+.left-side {
+  flex: flex-shrink;
+}
+
+.right-side {
+  flex: flex-grow;
+  width: 100%;
+}
+
+.slot-container {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+}
+
+.flex-field {
+  flex: flex-grow;
+  width: 90%;
+}
+
+.hand {
+  flex: flex-shrink;
+}

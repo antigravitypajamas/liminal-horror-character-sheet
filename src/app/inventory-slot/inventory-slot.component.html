@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="left-side">
+    <mat-checkbox labelPosition="before">FATIGUE</mat-checkbox>
+  </div>
+  <div class="right-side">
+    <div *ngIf="!handed; else hands" class="slot-container">
+      <mat-form-field class="flex-field">
+        <mat-label>INVENTORY ITEM</mat-label>
+        <input matInput type="text" [formControl]="inventoryItemControl" />
+      </mat-form-field>
+    </div>
+    <ng-template #hands class="slot-container">
+      <mat-form-field class="flex-field">
+        <mat-label>{{ hand }}</mat-label>
+        <input matInput type="text" [formControl]="inventoryItemControl" />
+      </mat-form-field>
+    </ng-template>
+  </div>
+</div>
