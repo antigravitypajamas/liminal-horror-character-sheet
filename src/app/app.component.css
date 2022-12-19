@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  flex-flow: row;
+}
+
+.left-side {
+  width: 50%;
+}
