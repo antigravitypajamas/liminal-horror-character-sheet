@@ -1,3 +1,4 @@
+import { Character } from './models/character';
 import { CharacterStore } from './services/character.store';
 import { Component } from '@angular/core';
 import * as $ from 'jquery';
@@ -8,7 +9,7 @@ import * as $ from 'jquery';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  character: string;
+  character: Character;
   constructor(private characterStore: CharacterStore) {
     this.character = this.characterStore.loadCharacter();
   }

@@ -6,17 +6,23 @@ import { Character } from '../models/character';
   providedIn: 'root',
 })
 export class CharacterStore {
-  character: string = '';
+  character: Character = {};
   //private characterSubject = new BehaviorSubject<Character>({});
 
   //character$: Observable<Character> = this.characterSubject.asObservable();
 
   saveCharacter(changes: Partial<Character>) {
-    localStorage.setItem('liminalHorrorCharacter', JSON.stringify(changes));
+    this.character = { ...this.character, ...changes };
+    localStorage.setItem(
+      'liminalHorrorCharacter',
+      JSON.stringify(this.character)
+    );
   }
 
   loadCharacter() {
-    this.character = localStorage.getItem('liminalHorrorCharacter') || '';
+    this.character = JSON.parse(
+      localStorage.getItem('liminalHorrorCharacter') || ''
+    );
     return this.character;
   }
 }
