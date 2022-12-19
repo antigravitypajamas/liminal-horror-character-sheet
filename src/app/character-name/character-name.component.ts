@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { CharacterStore } from './../services/character.store';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -7,5 +8,13 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./character-name.component.css'],
 })
 export class CharacterNameComponent {
-  constructor() {}
+  name: string = '';
+
+  @Output()
+  nameEvent = new EventEmitter<string>();
+  constructor(private store: CharacterStore) {}
+
+  addName(name: string) {
+    this.store.saveCharacter({ name });
+  }
 }

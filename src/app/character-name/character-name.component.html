@@ -1,1 +1,7 @@
-<label-and-input id="name" label="NAME" class="full-width"></label-and-input>
+<label-and-input
+  #name
+  id="name"
+  label="NAME"
+  class="full-width"
+  (valueEvent)="addName($event)"
+></label-and-input>

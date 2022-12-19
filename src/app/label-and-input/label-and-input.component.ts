@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -15,5 +15,13 @@ export class LabelAndInputComponent {
 
   @Input()
   class: string = 'label-and-input';
+
+  @Output()
+  valueEvent = new EventEmitter<any>();
+
   control = new FormControl('');
+
+  valueChanged(value: any) {
+    this.valueEvent.emit(value);
+  }
 }

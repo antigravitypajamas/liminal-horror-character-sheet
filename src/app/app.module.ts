@@ -1,6 +1,7 @@
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -30,6 +31,7 @@ import { MarkdownEditorContainerComponent } from './markdown-editor-container/ma
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,

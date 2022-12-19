@@ -1,4 +1,10 @@
 <mat-form-field [class]="class">
   <mat-label>{{ label }}</mat-label>
-  <input matInput [type]="type" [formControl]="control" />
+  <input
+    matInput
+    #input
+    [type]="type"
+    [formControl]="control"
+    (change)="valueChanged(input.value)"
+  />
 </mat-form-field>
