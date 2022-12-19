@@ -9,5 +9,11 @@ import { FormControl } from '@angular/forms';
 export class LabelAndInputComponent {
   @Input()
   label: string = '';
+
+  @Input()
+  type: 'text' | 'number' = 'text';
+
+  @Input()
+  class: string = 'label-and-input';
   control = new FormControl('');
 }

@@ -1,0 +1,24 @@
+/* .base-stat input::-webkit-outer-spin-button,
+-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.base-stat input[type="number"] {
+  -moz-appearance: textfield;
+} */
+
+.container {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+}
+
+.left-side {
+  flex: flex-basis;
+  margin-right: 1rem;
+}
+
+.right-side {
+  flex: flex-basis;
+}

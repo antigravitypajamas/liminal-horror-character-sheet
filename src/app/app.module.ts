@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
@@ -12,10 +13,17 @@ import { BackgroundComponent } from './background/background.component';
 import { CharacterStatComponent } from './character-stat/character-stat.component';
 
 @NgModule({
-  declarations: [AppComponent, CharacterNameComponent, LabelAndInputComponent, BackgroundComponent, CharacterStatComponent],
+  declarations: [
+    AppComponent,
+    CharacterNameComponent,
+    LabelAndInputComponent,
+    BackgroundComponent,
+    CharacterStatComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,

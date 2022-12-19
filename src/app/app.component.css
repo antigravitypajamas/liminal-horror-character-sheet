@@ -1,8 +1,36 @@
+h2 {
+  margin-left: 3rem;
+}
+
 .container {
+  margin-left: 3rem;
   display: flex;
   flex-flow: row;
 }
 
 .left-side {
-  width: 50%;
+  flex: flex-grow;
+  margin-right: 1rem;
+}
+
+.right-side {
+  flex: flex-grow;
+}
+
+.armor-and-stability {
+  display: flex;
+  flex-flow: row;
+}
+
+.armor {
+  flex: flex-grow;
+  margin-right: 1rem;
+}
+
+.stability {
+  flex: flex-grow;
+}
+
+.deprived {
+  margin: 0 12px;
 }
