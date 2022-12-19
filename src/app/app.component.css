@@ -6,6 +6,7 @@ h2 {
   margin-left: 3rem;
   display: flex;
   flex-flow: row;
+  align-items: stretch;
 }
 
 .left-side {
