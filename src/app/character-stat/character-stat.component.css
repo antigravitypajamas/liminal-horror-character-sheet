@@ -15,10 +15,18 @@
 }
 
 .left-side {
-  flex: flex-basis;
+  flex: flex-grow;
   margin-right: 1rem;
 }
 
+.left-side .mat-mdc-form-field {
+  width: 14.5rem;
+}
+
 .right-side {
-  flex: flex-basis;
+  flex: flex-grow;
+}
+
+.right-side .mat-mdc-form-field {
+  width: 14rem;
 }

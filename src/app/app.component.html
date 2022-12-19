@@ -1,7 +1,13 @@
 <h2>Liminal Horror Character Sheet</h2>
 <div class="container">
   <div class="left-side">
-    <button mat-button color="primary" (click)="saveCharacter()"></button>
+    <p class="release-note">
+      <span class="state">ALPHA:</span> This character sheet currently stores
+      data in localstorage in your browser. It will persist as long as you do
+      not clear your cache. Upcoming releases will include a better storage
+      system.
+    </p>
+    <!-- <button mat-button color="primary" (click)="(saveCharacter)"></button> -->
     <div class="name"><character-name></character-name></div>
     <div class="background"><background></background></div>
     <div class="stats">

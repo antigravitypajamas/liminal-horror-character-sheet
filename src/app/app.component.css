@@ -12,12 +12,13 @@ h2 {
 .left-side {
   flex: flex-grow;
   margin-right: 1rem;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
 }
 
 .right-side {
   flex: flex-grow;
   width: 100%;
+  margin-top: 2rem;
 }
 
 .armor-and-stability {
@@ -51,4 +52,17 @@ h2 {
 .inventory-item {
   flex: flex-grow;
   width: 100%;
+}
+
+.release-note {
+  font-size: 0.75rem;
+  width: 85%;
+}
+
+.state {
+  font-weight: 700;
+}
+
+:host ::ng-deep .label-and-input {
+  width: 14.5rem;
 }
