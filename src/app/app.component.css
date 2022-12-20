@@ -105,8 +105,9 @@ h2 {
 
 .submit-button {
   margin-bottom: 1rem;
-  margin-right: 1rem;
+  margin-right: 4rem;
   float: right;
+  padding: 0px 20px;
 }
 
 .inventory-container {
@@ -139,7 +140,7 @@ h2 {
 }
 
 .name .mat-mdc-form-field {
-  width: 25rem;
+  width: 23rem;
 }
 
 .background .mat-mdc-form-field {
