@@ -34,9 +34,15 @@ export class CharacterStore {
     // console.log(
     //   JSON.parse(localStorage.getItem('liminalHorrorCharacter') || '')
     // );
-    this.character$ = of(
-      JSON.parse(localStorage.getItem('liminalHorrorCharacter') || '')
-    );
+    const whatIsStored = localStorage.getItem('liminalHorrorCharacter');
+    console.log(whatIsStored);
+
+    if (whatIsStored) {
+      this.character$ = of(
+        JSON.parse(localStorage.getItem('liminalHorrorCharacter') || '')
+      );
+    }
+
     //this.character$.pipe(map((data) => console.log(data)));
     return this.character$;
   }

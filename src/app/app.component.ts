@@ -2,21 +2,34 @@ import { Observable, map, of, tap } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Character } from './models/character';
 import { CharacterStore } from './services/character.store';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   char$: Observable<any> = of({});
   character: Character = {};
   form: FormGroup = new FormGroup({});
-  constructor(
-    private characterStore: CharacterStore,
-    private fb: FormBuilder
-  ) {}
+  constructor(private characterStore: CharacterStore, private fb: FormBuilder) {
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+      background: ['', Validators.required],
+      baseStrength: ['', Validators.required],
+      modifiedStrength: [''],
+      baseDexterity: ['', Validators.required],
+      modifiedDexterity: [''],
+      baseControl: ['', Validators.required],
+      modifiedControl: [''],
+      baseHp: ['', Validators.required],
+      modifiedHp: [''],
+      deprived: [''],
+      armor: [''],
+      stability: [''],
+    });
+  }
 
   ngOnInit() {
     this.char$ = this.characterStore.loadCharacter().pipe(
@@ -26,7 +39,9 @@ export class AppComponent implements OnInit {
     );
 
     this.char$.subscribe();
+  }
 
+  ngAfterViewInit(): void {
     this.form = this.fb.group({
       name: [this.character.name, Validators.required],
       background: [this.character.background, Validators.required],
