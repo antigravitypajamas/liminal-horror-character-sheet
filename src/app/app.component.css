@@ -68,3 +68,36 @@ h2 {
 :host ::ng-deep .label-and-input {
   width: 14.5rem;
 }
+
+.full-width {
+  width: 98%;
+}
+
+.stat-container {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+}
+
+.stat-left-side {
+  flex: flex-grow;
+  margin-right: 1rem;
+}
+
+.stat-left-side .mat-mdc-form-field {
+  width: 14.5rem;
+}
+
+.stat-right-side {
+  flex: flex-grow;
+}
+
+.stat-right-side .mat-mdc-form-field {
+  width: 14rem;
+}
+
+.submit-button {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  float: right;
+}

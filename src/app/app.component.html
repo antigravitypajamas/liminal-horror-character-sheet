@@ -8,27 +8,154 @@
       system.
     </p>
     <!-- <button mat-button color="primary" (click)="(saveCharacter)"></button> -->
-    <div class="name"><character-name></character-name></div>
-    <div class="background"><background></background></div>
-    <div class="stats">
-      <character-stat statName="STRENGTH"></character-stat>
-      <character-stat statName="DEXTERITY"></character-stat>
-      <character-stat statName="CONTROL"></character-stat>
-    </div>
-    <div class="hp-and-deprived">
-      <div class="hp">
-        <character-stat statName="HP"></character-stat>
+    <div [formGroup]="form">
+      <button
+        class="submit-button"
+        mat-raised-button
+        color="primary"
+        #saveButton
+        (click)="saveCharacter()"
+      >
+        Save
+      </button>
+      <div class="name">
+        <!-- <character-name></character-name> -->
+        <mat-form-field class="full-width">
+          <mat-label>NAME</mat-label>
+          <input matInput type="text" formControlName="name" />
+        </mat-form-field>
       </div>
-      <div class="deprived">
-        <mat-checkbox labelPosition="before">DEPRIVED?</mat-checkbox>
+      <div class="background">
+        <!-- <background></background> -->
+        <mat-form-field class="full-width">
+          <mat-label>BACKGROUND</mat-label>
+          <input matInput type="text" formControlName="background" />
+        </mat-form-field>
       </div>
-    </div>
-    <div class="armor-and-stability">
-      <div class="armor">
-        <label-and-input label="ARMOR" type="number"></label-and-input>
+      <div class="stats">
+        <!-- <character-stat statName="STRENGTH"></character-stat> -->
+        <div class="stat-container">
+          <div class="stat-left-side">
+            <mat-form-field>
+              <label>STRENGTH</label>
+              <input
+                matInput
+                type="number"
+                class="base-stat"
+                formControlName="baseStrength"
+              />
+            </mat-form-field>
+          </div>
+          <div class="stat-right-side">
+            <mat-form-field>
+              <label>CURRENT STRENGTH</label>
+              <input
+                matInput
+                type="number"
+                class="current-stat"
+                formControlName="modifiedStrength"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <!-- <character-stat statName="DEXTERITY"></character-stat> -->
+        <div class="stat-container">
+          <div class="stat-left-side">
+            <mat-form-field>
+              <label>DEXTERITY</label>
+              <input
+                matInput
+                type="number"
+                class="base-stat"
+                formControlName="baseDexterity"
+              />
+            </mat-form-field>
+          </div>
+          <div class="stat-right-side">
+            <mat-form-field>
+              <label>CURRENT DEXTERITY</label>
+              <input
+                matInput
+                type="number"
+                class="current-stat"
+                formControlName="modifiedDexterity"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <!-- <character-stat statName="CONTROL"></character-stat> -->
+        <div class="stat-container">
+          <div class="stat-left-side">
+            <mat-form-field>
+              <label>CONTROL</label>
+              <input
+                matInput
+                type="number"
+                class="base-stat"
+                formControlName="baseControl"
+              />
+            </mat-form-field>
+          </div>
+          <div class="stat-right-side">
+            <mat-form-field>
+              <label>CURRENT CONTROL</label>
+              <input
+                matInput
+                type="number"
+                class="current-stat"
+                formControlName="modifiedControl"
+              />
+            </mat-form-field>
+          </div>
+        </div>
       </div>
-      <div class="stability">
-        <label-and-input label="STABILITY" type="number"></label-and-input>
+      <div class="hp-and-deprived">
+        <div class="hp">
+          <!-- <character-stat statName="HP"></character-stat> -->
+          <div class="stat-container">
+            <div class="stat-left-side">
+              <mat-form-field>
+                <label>HP</label>
+                <input
+                  matInput
+                  type="number"
+                  class="base-stat"
+                  formControlName="baseHp"
+                />
+              </mat-form-field>
+            </div>
+            <div class="stat-right-side">
+              <mat-form-field>
+                <label>CURRENT HP</label>
+                <input
+                  matInput
+                  type="number"
+                  class="current-stat"
+                  formControlName="modifiedHp"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="deprived">
+          <mat-checkbox labelPosition="before">DEPRIVED?</mat-checkbox>
+        </div>
+      </div>
+      <div class="armor-and-stability">
+        <div class="armor">
+          <!-- <label-and-input label="ARMOR" type="number"></label-and-input> -->
+          <mat-form-field>
+            <mat-label>ARMOR</mat-label>
+            <input matInput type="number" formControlName="armor" />
+          </mat-form-field>
+        </div>
+        <div class="stability">
+          <!-- <label-and-input label="STABILITY" type="number"></label-and-input> -->
+          <mat-form-field>
+            <mat-label>STABILITY</mat-label>
+            <input matInput type="number" formControlName="stability" />
+          </mat-form-field>
+        </div>
       </div>
     </div>
   </div>
