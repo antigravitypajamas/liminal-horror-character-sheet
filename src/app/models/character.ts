@@ -17,6 +17,25 @@ export interface Character {
   deprived?: boolean;
   armor?: number;
   stability?: number;
-  inventory?: InventoryAndFatigue[];
+  inventoryRightHand?: string;
+  inventoryLeftHand?: string;
+  inventorySlot3?: string;
+  inventorySlot4?: string;
+  inventorySlot5?: string;
+  inventorySlot6?: string;
+  inventorySlot7?: string;
+  inventorySlot8?: string;
+  inventorySlot9?: string;
+  inventorySlot10?: string;
+  fatigue1?: boolean;
+  fatigue2?: boolean;
+  fatigue3?: boolean;
+  fatigue4?: boolean;
+  fatigue5?: boolean;
+  fatigue6?: boolean;
+  fatigue7?: boolean;
+  fatigue8?: boolean;
+  fatigue9?: boolean;
+  fatigue10?: boolean;
   notes?: any;
 }
