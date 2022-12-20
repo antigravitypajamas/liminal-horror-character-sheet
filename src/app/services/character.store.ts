@@ -6,7 +6,6 @@ import { Character } from '../models/character';
   providedIn: 'root',
 })
 export class CharacterStore {
-  //character: Character = {};
   private characterSubject = new BehaviorSubject<Character>({});
 
   character$: Observable<Character> = this.characterSubject.asObservable();
@@ -15,7 +14,6 @@ export class CharacterStore {
     const character = this.characterSubject.getValue();
     const newCharacter = { ...character, ...changes };
 
-    // send to local storage as a test
     localStorage.setItem(
       'liminalHorrorCharacter',
       JSON.stringify(newCharacter)
@@ -23,27 +21,16 @@ export class CharacterStore {
 
     this.characterSubject.next(newCharacter);
     return this.characterSubject.asObservable();
-    // this.character = { ...this.character, ...changes };
-    // localStorage.setItem(
-    //   'liminalHorrorCharacter',
-    //   JSON.stringify(this.character)
-    // );
   }
 
   loadCharacter() {
-    // console.log(
-    //   JSON.parse(localStorage.getItem('liminalHorrorCharacter') || '')
-    // );
     const whatIsStored = localStorage.getItem('liminalHorrorCharacter');
-    console.log(whatIsStored);
 
     if (whatIsStored) {
       this.character$ = of(
         JSON.parse(localStorage.getItem('liminalHorrorCharacter') || '')
       );
     }
-
-    //this.character$.pipe(map((data) => console.log(data)));
     return this.character$;
   }
 }
