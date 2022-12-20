@@ -1,3 +1,8 @@
+export interface InventoryAndFatigue {
+  item: string;
+  fatigue: boolean;
+}
+
 export interface Character {
   name?: string;
   background?: string;
@@ -12,7 +17,6 @@ export interface Character {
   deprived?: boolean;
   armor?: number;
   stability?: number;
-  fatigueCount?: number;
-  inventory?: string[];
+  inventory?: InventoryAndFatigue[];
   notes?: any;
 }

@@ -1,5 +1,6 @@
 <h2>Liminal Horror Character Sheet</h2>
-<div class="container">
+<!-- <div class="container"> -->
+<div [formGroup]="form" class="container">
   <div class="left-side">
     <p class="release-note">
       <span class="state">ALPHA:</span> This character sheet currently stores
@@ -8,161 +9,315 @@
       system.
     </p>
     <!-- <button mat-button color="primary" (click)="(saveCharacter)"></button> -->
-    <div [formGroup]="form">
-      <button
-        class="submit-button"
-        mat-raised-button
-        color="primary"
-        #saveButton
-        (click)="saveCharacter()"
-      >
-        Save
-      </button>
-      <div class="name">
-        <!-- <character-name></character-name> -->
-        <mat-form-field class="full-width">
-          <mat-label>NAME</mat-label>
-          <input matInput type="text" formControlName="name" />
-        </mat-form-field>
-      </div>
-      <div class="background">
-        <!-- <background></background> -->
-        <mat-form-field class="full-width">
-          <mat-label>BACKGROUND</mat-label>
-          <input matInput type="text" formControlName="background" />
-        </mat-form-field>
-      </div>
-      <div class="stats">
-        <!-- <character-stat statName="STRENGTH"></character-stat> -->
-        <div class="stat-container">
-          <div class="stat-left-side">
-            <mat-form-field>
-              <label>STRENGTH</label>
-              <input
-                matInput
-                type="number"
-                class="base-stat"
-                formControlName="baseStrength"
-              />
-            </mat-form-field>
-          </div>
-          <div class="stat-right-side">
-            <mat-form-field>
-              <label>CURRENT STRENGTH</label>
-              <input
-                matInput
-                type="number"
-                class="current-stat"
-                formControlName="modifiedStrength"
-              />
-            </mat-form-field>
-          </div>
-        </div>
-        <!-- <character-stat statName="DEXTERITY"></character-stat> -->
-        <div class="stat-container">
-          <div class="stat-left-side">
-            <mat-form-field>
-              <label>DEXTERITY</label>
-              <input
-                matInput
-                type="number"
-                class="base-stat"
-                formControlName="baseDexterity"
-              />
-            </mat-form-field>
-          </div>
-          <div class="stat-right-side">
-            <mat-form-field>
-              <label>CURRENT DEXTERITY</label>
-              <input
-                matInput
-                type="number"
-                class="current-stat"
-                formControlName="modifiedDexterity"
-              />
-            </mat-form-field>
-          </div>
-        </div>
-        <!-- <character-stat statName="CONTROL"></character-stat> -->
-        <div class="stat-container">
-          <div class="stat-left-side">
-            <mat-form-field>
-              <label>CONTROL</label>
-              <input
-                matInput
-                type="number"
-                class="base-stat"
-                formControlName="baseControl"
-              />
-            </mat-form-field>
-          </div>
-          <div class="stat-right-side">
-            <mat-form-field>
-              <label>CURRENT CONTROL</label>
-              <input
-                matInput
-                type="number"
-                class="current-stat"
-                formControlName="modifiedControl"
-              />
-            </mat-form-field>
-          </div>
-        </div>
-      </div>
-      <div class="hp-and-deprived">
-        <div class="hp">
-          <!-- <character-stat statName="HP"></character-stat> -->
-          <div class="stat-container">
-            <div class="stat-left-side">
-              <mat-form-field>
-                <label>HP</label>
-                <input
-                  matInput
-                  type="number"
-                  class="base-stat"
-                  formControlName="baseHp"
-                />
-              </mat-form-field>
-            </div>
-            <div class="stat-right-side">
-              <mat-form-field>
-                <label>CURRENT HP</label>
-                <input
-                  matInput
-                  type="number"
-                  class="current-stat"
-                  formControlName="modifiedHp"
-                />
-              </mat-form-field>
-            </div>
-          </div>
-        </div>
-        <div class="deprived">
-          <mat-checkbox labelPosition="before">DEPRIVED?</mat-checkbox>
-        </div>
-      </div>
-      <div class="armor-and-stability">
-        <div class="armor">
-          <!-- <label-and-input label="ARMOR" type="number"></label-and-input> -->
+
+    <button
+      class="submit-button"
+      mat-raised-button
+      color="primary"
+      #saveButton
+      (click)="saveCharacter()"
+    >
+      Save
+    </button>
+    <div class="name">
+      <!-- <character-name></character-name> -->
+      <mat-form-field class="full-width">
+        <mat-label>NAME</mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
+    </div>
+    <div class="background">
+      <!-- <background></background> -->
+      <mat-form-field class="full-width">
+        <mat-label>BACKGROUND</mat-label>
+        <input matInput type="text" formControlName="background" />
+      </mat-form-field>
+    </div>
+    <div class="stats">
+      <!-- <character-stat statName="STRENGTH"></character-stat> -->
+      <div class="stat-container">
+        <div class="stat-left-side">
           <mat-form-field>
-            <mat-label>ARMOR</mat-label>
-            <input matInput type="number" formControlName="armor" />
+            <label>STRENGTH</label>
+            <input
+              matInput
+              type="number"
+              class="base-stat"
+              formControlName="baseStrength"
+            />
           </mat-form-field>
         </div>
-        <div class="stability">
-          <!-- <label-and-input label="STABILITY" type="number"></label-and-input> -->
+        <div class="stat-right-side">
           <mat-form-field>
-            <mat-label>STABILITY</mat-label>
-            <input matInput type="number" formControlName="stability" />
+            <label>CURRENT STRENGTH</label>
+            <input
+              matInput
+              type="number"
+              class="current-stat"
+              formControlName="modifiedStrength"
+            />
           </mat-form-field>
         </div>
+      </div>
+      <!-- <character-stat statName="DEXTERITY"></character-stat> -->
+      <div class="stat-container">
+        <div class="stat-left-side">
+          <mat-form-field>
+            <label>DEXTERITY</label>
+            <input
+              matInput
+              type="number"
+              class="base-stat"
+              formControlName="baseDexterity"
+            />
+          </mat-form-field>
+        </div>
+        <div class="stat-right-side">
+          <mat-form-field>
+            <label>CURRENT DEXTERITY</label>
+            <input
+              matInput
+              type="number"
+              class="current-stat"
+              formControlName="modifiedDexterity"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- <character-stat statName="CONTROL"></character-stat> -->
+      <div class="stat-container">
+        <div class="stat-left-side">
+          <mat-form-field>
+            <label>CONTROL</label>
+            <input
+              matInput
+              type="number"
+              class="base-stat"
+              formControlName="baseControl"
+            />
+          </mat-form-field>
+        </div>
+        <div class="stat-right-side">
+          <mat-form-field>
+            <label>CURRENT CONTROL</label>
+            <input
+              matInput
+              type="number"
+              class="current-stat"
+              formControlName="modifiedControl"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="hp-and-deprived">
+      <div class="hp">
+        <!-- <character-stat statName="HP"></character-stat> -->
+        <div class="stat-container">
+          <div class="stat-left-side">
+            <mat-form-field>
+              <label>HP</label>
+              <input
+                matInput
+                type="number"
+                class="base-stat"
+                formControlName="baseHp"
+              />
+            </mat-form-field>
+          </div>
+          <div class="stat-right-side">
+            <mat-form-field>
+              <label>CURRENT HP</label>
+              <input
+                matInput
+                type="number"
+                class="current-stat"
+                formControlName="modifiedHp"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="deprived">
+        <mat-checkbox labelPosition="before">DEPRIVED?</mat-checkbox>
+      </div>
+    </div>
+    <div class="armor-and-stability">
+      <div class="armor">
+        <!-- <label-and-input label="ARMOR" type="number"></label-and-input> -->
+        <mat-form-field>
+          <mat-label>ARMOR</mat-label>
+          <input matInput type="number" formControlName="armor" />
+        </mat-form-field>
+      </div>
+      <div class="stability">
+        <!-- <label-and-input label="STABILITY" type="number"></label-and-input> -->
+        <mat-form-field>
+          <mat-label>STABILITY</mat-label>
+          <input matInput type="number" formControlName="stability" />
+        </mat-form-field>
       </div>
     </div>
   </div>
   <div class="right-side">
     <div class="inventory">
       <h3>INVENTORY</h3>
-      <inventory-slot
+      <div class="inventory-container">
+        <div class="inventory-left-side">
+          <mat-checkbox labelPosition="before" formControlName="fatigue1"
+            >FATIGUE</mat-checkbox
+          >
+        </div>
+        <div class="inventory-right-side">
+          <div class="slot-container">
+            <mat-form-field class="flex-field">
+              <mat-label>R. HAND</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="inventoryRightHand"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="inventory-container">
+        <div class="inventory-left-side">
+          <mat-checkbox labelPosition="before" formControlName="fatigue2"
+            >FATIGUE</mat-checkbox
+          >
+        </div>
+        <div class="inventory-right-side">
+          <div class="slot-container">
+            <mat-form-field class="flex-field">
+              <mat-label>L. HAND</mat-label>
+              <input matInput type="text" formControlName="inventoryLeftHand" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="inventory-container">
+        <div class="inventory-left-side">
+          <mat-checkbox labelPosition="before" formControlName="fatigue3"
+            >FATIGUE</mat-checkbox
+          >
+        </div>
+        <div class="inventory-right-side">
+          <div class="slot-container">
+            <mat-form-field class="flex-field">
+              <mat-label>INVENTORY</mat-label>
+              <input matInput type="text" formControlName="inventorySlot3" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="inventory-container">
+        <div class="inventory-left-side">
+          <mat-checkbox labelPosition="before" formControlName="fatigue4"
+            >FATIGUE</mat-checkbox
+          >
+        </div>
+        <div class="inventory-right-side">
+          <div class="slot-container">
+            <mat-form-field class="flex-field">
+              <mat-label>INVENTORY</mat-label>
+              <input matInput type="text" formControlName="inventorySlot4" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="inventory-container">
+        <div class="inventory-left-side">
+          <mat-checkbox labelPosition="before" formControlName="fatigue5"
+            >FATIGUE</mat-checkbox
+          >
+        </div>
+        <div class="inventory-right-side">
+          <div class="slot-container">
+            <mat-form-field class="flex-field">
+              <mat-label>INVENTORY</mat-label>
+              <input matInput type="text" formControlName="inventorySlot5" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="inventory-container">
+        <div class="inventory-left-side">
+          <mat-checkbox labelPosition="before" formControlName="fatigue6"
+            >FATIGUE</mat-checkbox
+          >
+        </div>
+        <div class="inventory-right-side">
+          <div class="slot-container">
+            <mat-form-field class="flex-field">
+              <mat-label>INVENTORY</mat-label>
+              <input matInput type="text" formControlName="inventorySlot6" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="inventory-container">
+        <div class="inventory-left-side">
+          <mat-checkbox labelPosition="before" formControlName="fatigue7"
+            >FATIGUE</mat-checkbox
+          >
+        </div>
+        <div class="inventory-right-side">
+          <div class="slot-container">
+            <mat-form-field class="flex-field">
+              <mat-label>INVENTORY</mat-label>
+              <input matInput type="text" formControlName="inventorySlot7" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="inventory-container">
+        <div class="inventory-left-side">
+          <mat-checkbox labelPosition="before" formControlName="fatigue8"
+            >FATIGUE</mat-checkbox
+          >
+        </div>
+        <div class="inventory-right-side">
+          <div class="slot-container">
+            <mat-form-field class="flex-field">
+              <mat-label>INVENTORY</mat-label>
+              <input matInput type="text" formControlName="inventorySlot8" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="inventory-container">
+        <div class="inventory-left-side">
+          <mat-checkbox labelPosition="before" formControlName="fatigue9"
+            >FATIGUE</mat-checkbox
+          >
+        </div>
+        <div class="inventory-right-side">
+          <div class="slot-container">
+            <mat-form-field class="flex-field">
+              <mat-label>INVENTORY</mat-label>
+              <input matInput type="text" formControlName="inventorySlot9" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="inventory-container">
+        <div class="inventory-left-side">
+          <mat-checkbox labelPosition="before" formControlName="fatigue10"
+            >FATIGUE</mat-checkbox
+          >
+        </div>
+        <div class="inventory-right-side">
+          <div class="slot-container">
+            <mat-form-field class="flex-field">
+              <mat-label>INVENTORY</mat-label>
+              <input matInput type="text" formControlName="inventorySlot10" />
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <!-- <inventory-slot
         class="inventory-item"
         [handed]="true"
         hand="R. HAND"
@@ -179,10 +334,11 @@
       <inventory-slot class="inventory-item"></inventory-slot>
       <inventory-slot class="inventory-item"></inventory-slot>
       <inventory-slot class="inventory-item"></inventory-slot>
-      <inventory-slot class="inventory-item"></inventory-slot>
+      <inventory-slot class="inventory-item"></inventory-slot> -->
     </div>
   </div>
+  <div class="notes">
+    <markdown-editor-container></markdown-editor-container>
+  </div>
 </div>
-<div class="notes">
-  <markdown-editor-container></markdown-editor-container>
-</div>
+<!-- </div> -->
