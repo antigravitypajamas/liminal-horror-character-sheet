@@ -21,7 +21,7 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 
 ## Upcoming work
 - Clear validation messaging
-- Finishing work on Notes (e.g., XSS prevention, Preview mode, etc.)
+- Finishing work on Notes (e.g., XSS prevention, etc.)
 - Disabling inventory slots when Fatigued
 - Dark theme
 - Status notifications (e.g., you are reduced to 0 HP, a toastr message will appear to prompt you to roll a d20 for fallout, etc.)
@@ -30,7 +30,7 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 - Responsive behavior for devices
 - User authentication
 - Backend storage for multiple characters
-- Refactor components
+- Refactor components for reusability
 
 ## Haiku
 entering this space\
@@ -45,3 +45,5 @@ Liminal Horror is copyright by Goblin Archives LLC.
 Liminal Horror can be purchased [here](https://goblinarchives.itch.io/liminal-horror).
 
 Modules by antigravity.pajamas can be found [here](https://antigravitypajamas.itch.io/)
+
+Consider making a donation to support this project [here](https://ko-fi.com/antigravitypajamas).
