@@ -16,6 +16,7 @@ import { BackgroundComponent } from './background/background.component';
 import { CharacterStatComponent } from './character-stat/character-stat.component';
 import { InventorySlotComponent } from './inventory-slot/inventory-slot.component';
 import { MarkdownEditorContainerComponent } from './markdown-editor-container/markdown-editor-container.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,9 @@ import { MarkdownEditorContainerComponent } from './markdown-editor-container/ma
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MarkdownModule.forRoot(),
   ],
-  providers: [MarkdownService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

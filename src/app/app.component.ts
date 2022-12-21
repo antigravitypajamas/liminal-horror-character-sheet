@@ -1,3 +1,4 @@
+import { MarkdownService } from 'ngx-markdown';
 import { LessThanZeroValidator } from './services/less-than-zero.validator';
 import { Observable, map, of, tap } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -10,6 +11,7 @@ import { EditorOption } from 'angular-markdown-editor';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  providers: [MarkdownService],
 })
 export class AppComponent implements OnInit, AfterContentInit {
   char$: Observable<any> = of({});
@@ -20,7 +22,8 @@ export class AppComponent implements OnInit, AfterContentInit {
   constructor(
     private characterStore: CharacterStore,
     private fb: FormBuilder,
-    private lessThanZeroValidator: LessThanZeroValidator
+    private lessThanZeroValidator: LessThanZeroValidator,
+    private markdownService: MarkdownService
   ) {
     this.form = this.fb.group({
       name: ['', [Validators.required]],
@@ -155,6 +158,10 @@ export class AppComponent implements OnInit, AfterContentInit {
     if (this.char$) {
       this.char$.subscribe();
     }
+
+    this.editorOptions = {
+      parser: (val) => this.markdownService.parse(val.trim()),
+    };
 
     //this.char$.subscribe();
   }
