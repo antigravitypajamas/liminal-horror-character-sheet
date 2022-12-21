@@ -1,21 +1,10 @@
 import { LessThanZeroValidator } from './services/less-than-zero.validator';
 import { Observable, map, of, tap } from 'rxjs';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  AsyncValidator,
-  AbstractControl,
-  ValidationErrors,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Character } from './models/character';
 import { CharacterStore } from './services/character.store';
-import {
-  AfterContentInit,
-  AfterViewInit,
-  Component,
-  OnInit,
-} from '@angular/core';
+import { AfterContentInit, Component, OnInit, Inject } from '@angular/core';
+import { EditorOption } from 'angular-markdown-editor';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +15,8 @@ export class AppComponent implements OnInit, AfterContentInit {
   char$: Observable<any> = of({});
   character: Character = {};
   form: FormGroup = new FormGroup({});
+  markdownText: string = '';
+  editorOptions: EditorOption = {};
   constructor(
     private characterStore: CharacterStore,
     private fb: FormBuilder,
@@ -66,6 +57,7 @@ export class AppComponent implements OnInit, AfterContentInit {
       fatigue8: [false],
       fatigue9: [false],
       fatigue10: [false],
+      notes: [''],
     });
   }
 
@@ -220,6 +212,7 @@ export class AppComponent implements OnInit, AfterContentInit {
       fatigue8: [this.character.fatigue8],
       fatigue9: [this.character.fatigue9],
       fatigue10: [this.character.fatigue10],
+      notes: [this.character.notes],
     });
   }
 

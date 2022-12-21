@@ -156,3 +156,7 @@ h2 {
 .background .mat-mdc-form-field {
   width: 29rem;
 }
+
+.markdown-container {
+  padding-bottom: 5rem;
+}

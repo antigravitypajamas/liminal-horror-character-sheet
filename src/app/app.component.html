@@ -346,7 +346,14 @@
     </div>
   </div>
   <div class="notes">
-    <markdown-editor-container></markdown-editor-container>
+    <div class="markdown-container">
+      <h5>NOTES</h5>
+      <angular-markdown-editor
+        textareaId="notes"
+        [rows]="12"
+        formControlName="notes"
+      ></angular-markdown-editor>
+    </div>
   </div>
 </div>
 <!-- </div> -->

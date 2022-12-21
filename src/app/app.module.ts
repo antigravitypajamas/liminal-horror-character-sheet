@@ -1,3 +1,4 @@
+import { MarkdownService } from 'ngx-markdown';
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -37,7 +38,7 @@ import { MarkdownEditorContainerComponent } from './markdown-editor-container/ma
     MatInputModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [MarkdownService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
