@@ -25,9 +25,9 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 - Backend storage for multiple characters
 
 ## Haiku
-entering this space
-it feels familiar and yet
-there is something *wrong*
+|entering this space
+|it feels familiar and yet
+|there is something *wrong*
 
 ## Legal
 Liminal Horror Character Sheet is an independent production by antigravity.pajamas and is not affiliated with Goblin Archives LLC. It is published under the Liminal Horror Third Party License.
