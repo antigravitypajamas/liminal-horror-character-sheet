@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## To run locally
 First be sure you have NodeJS, Angular, and git installed. 
 
-When you clone the repository, open up the project in your favorite editor's terminal and then run `npm i`.
+When you clone the repository, open up the project in your favorite editor and in the terminal run `npm i`.
 
 The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/liminal-horror-character-sheet/).
 
