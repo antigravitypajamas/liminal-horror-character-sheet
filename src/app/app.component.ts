@@ -23,8 +23,8 @@ export class AppComponent implements OnInit, AfterContentInit {
     private lessThanZeroValidator: LessThanZeroValidator
   ) {
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      background: ['', Validators.required],
+      name: [''],
+      background: [''],
       baseStrength: [0],
       modifiedStrength: [0],
       baseDexterity: [0],
@@ -73,8 +73,8 @@ export class AppComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     this.form = this.fb.group({
-      name: [this.character.name],
-      background: [this.character.background],
+      name: [this.character.name, Validators.required],
+      background: [this.character.background, , Validators.required],
       baseStrength: [
         this.character.baseStrength,
         {
@@ -182,7 +182,6 @@ export class AppComponent implements OnInit, AfterContentInit {
       stability: [
         this.character.stability,
         {
-          validators: [Validators.required],
           asyncValidators: [
             this.lessThanZeroValidator.validate.bind(
               this.lessThanZeroValidator
