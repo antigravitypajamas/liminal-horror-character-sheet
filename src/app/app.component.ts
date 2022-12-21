@@ -1,3 +1,4 @@
+import { LessThanZeroValidator } from './services/less-than-zero.validator';
 import { Observable, map, of, tap } from 'rxjs';
 import {
   FormBuilder,
@@ -9,32 +10,41 @@ import {
 } from '@angular/forms';
 import { Character } from './models/character';
 import { CharacterStore } from './services/character.store';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  OnInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit, AfterContentInit {
   char$: Observable<any> = of({});
   character: Character = {};
   form: FormGroup = new FormGroup({});
-  constructor(private characterStore: CharacterStore, private fb: FormBuilder) {
+  constructor(
+    private characterStore: CharacterStore,
+    private fb: FormBuilder,
+    private lessThanZeroValidator: LessThanZeroValidator
+  ) {
     this.form = this.fb.group({
       name: ['', Validators.required],
       background: ['', Validators.required],
-      baseStrength: ['', [Validators.required]],
-      modifiedStrength: [0, ,],
-      baseDexterity: [0, Validators.required, ,],
-      modifiedDexterity: [0, ,],
-      baseControl: [0, Validators.required, ,],
-      modifiedControl: [0, ,],
-      baseHp: ['', Validators.required, ,],
-      modifiedHp: [''],
+      baseStrength: [0],
+      modifiedStrength: [0],
+      baseDexterity: [0],
+      modifiedDexterity: [0],
+      baseControl: [0],
+      modifiedControl: [0],
+      baseHp: [0],
+      modifiedHp: [0],
       deprived: [false],
-      armor: [''],
-      stability: [''],
+      armor: [0],
+      stability: [0],
       inventoryRightHand: [''],
       inventoryLeftHand: [''],
       inventorySlot3: [''],
@@ -68,21 +78,126 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.char$.subscribe();
   }
 
-  ngAfterViewInit(): void {
+  ngAfterContentInit(): void {
     this.form = this.fb.group({
-      name: [this.character.name, Validators.required],
-      background: [this.character.background, Validators.required],
-      baseStrength: [this.character.baseStrength, Validators.required],
-      modifiedStrength: [this.character.modifiedStrength],
-      baseDexterity: [this.character.baseDexterity, Validators.required],
-      modifiedDexterity: [this.character.modifiedDexterity],
-      baseControl: [this.character.baseControl, Validators.required],
-      modifiedControl: [this.character.modifiedControl],
-      baseHp: [this.character.baseHp, Validators.required],
-      modifiedHp: [this.character.modifiedHp],
+      name: [this.character.name],
+      background: [this.character.background],
+      baseStrength: [
+        this.character.baseStrength,
+        {
+          validators: [Validators.required],
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      modifiedStrength: [
+        this.character.modifiedStrength,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      baseDexterity: [
+        this.character.baseDexterity,
+        {
+          validators: [Validators.required],
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      modifiedDexterity: [
+        this.character.modifiedDexterity,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      baseControl: [
+        this.character.baseControl,
+        {
+          validators: [Validators.required],
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      modifiedControl: [
+        this.character.modifiedControl,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      baseHp: [
+        this.character.baseHp,
+        {
+          validators: [Validators.required],
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      modifiedHp: [
+        this.character.modifiedHp,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
       deprived: [this.character.deprived],
-      armor: [this.character.armor],
-      stability: [this.character.stability],
+      armor: [
+        this.character.armor,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      stability: [
+        this.character.stability,
+        {
+          validators: [Validators.required],
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
       inventoryRightHand: [this.character.inventoryRightHand],
       inventoryLeftHand: [this.character.inventoryLeftHand],
       inventorySlot3: [this.character.inventorySlot3],
