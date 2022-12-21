@@ -152,13 +152,17 @@ export class AppComponent implements OnInit, AfterContentInit {
       })
     );
 
-    this.char$.subscribe();
+    if (this.char$) {
+      this.char$.subscribe();
+    }
+
+    //this.char$.subscribe();
   }
 
   ngAfterContentInit(): void {
     this.form = this.fb.group({
-      name: [this.character.name, Validators.required],
-      background: [this.character.background, , Validators.required],
+      name: [this.character.name],
+      background: [this.character.background],
       baseStrength: [this.character.baseStrength],
       modifiedStrength: [this.character.modifiedStrength],
       baseDexterity: [this.character.baseDexterity, ,],
