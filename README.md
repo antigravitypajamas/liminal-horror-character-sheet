@@ -27,6 +27,7 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 ## Future future work
 - User authentication
 - Backend storage for multiple characters
+- Refactor components
 
 ## Haiku
 entering this space\
