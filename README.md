@@ -13,6 +13,10 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 - The "Notes" section doesn't render the markdown in Preview mode
 - The "Notes" section doesn't scrub the input before storage
 
+## Resolved issues
+- Stability is no longer a required field
+- Name and Background are required fields
+
 ## Upcoming work
 - Clear validation messaging
 - Finishing work on Notes (e.g., XSS prevention, Preview mode, etc.)
