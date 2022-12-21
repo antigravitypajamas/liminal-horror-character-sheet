@@ -163,17 +163,121 @@ export class AppComponent implements OnInit, AfterContentInit {
     this.form = this.fb.group({
       name: [this.character.name],
       background: [this.character.background],
-      baseStrength: [this.character.baseStrength],
-      modifiedStrength: [this.character.modifiedStrength],
-      baseDexterity: [this.character.baseDexterity, ,],
-      modifiedDexterity: [this.character.modifiedDexterity],
-      baseControl: [this.character.baseControl],
-      modifiedControl: [this.character.modifiedControl],
-      baseHp: [this.character.baseHp],
-      modifiedHp: [this.character.modifiedHp],
+      baseStrength: [
+        this.character.baseStrength,
+        {
+          validators: [Validators.required],
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      modifiedStrength: [
+        this.character.modifiedStrength,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      baseDexterity: [
+        this.character.baseDexterity,
+        {
+          validators: [Validators.required],
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      modifiedDexterity: [
+        this.character.modifiedDexterity,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      baseControl: [
+        this.character.baseControl,
+        {
+          validators: [Validators.required],
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      modifiedControl: [
+        this.character.modifiedControl,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      baseHp: [
+        this.character.baseHp,
+        {
+          validators: [Validators.required],
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      modifiedHp: [
+        this.character.modifiedHp,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
       deprived: [this.character.deprived],
-      armor: [this.character.armor],
-      stability: [this.character.stability],
+      armor: [
+        this.character.armor,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
+      stability: [
+        this.character.stability,
+        {
+          asyncValidators: [
+            this.lessThanZeroValidator.validate.bind(
+              this.lessThanZeroValidator
+            ),
+          ],
+          updateOn: 'blur',
+        },
+      ],
       cash: [this.character.cash],
       inventoryRightHand: [this.character.inventoryRightHand],
       inventoryLeftHand: [this.character.inventoryLeftHand],
