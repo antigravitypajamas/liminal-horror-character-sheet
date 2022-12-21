@@ -160,3 +160,20 @@ h2 {
 .markdown-container {
   padding-bottom: 5rem;
 }
+
+.legal {
+  font-size: 0.75em;
+  font-weight: 400;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 800px;
+}
+
+.legal p {
+  text-align: center;
+}
+
+.legal img {
+}
