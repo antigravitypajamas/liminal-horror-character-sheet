@@ -36,7 +36,6 @@
             ],
             "scripts": [
               "node_modules/marked/marked.min.js",
-              "node_modules/jquery/dist/jquery.js",
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap-markdown/js/bootstrap-markdown.js"
             ]
@@ -97,7 +96,11 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"]
+          }
         }
       }
     }
