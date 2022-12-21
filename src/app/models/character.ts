@@ -17,6 +17,7 @@ export interface Character {
   deprived?: boolean;
   armor?: number;
   stability?: number;
+  cash?: string;
   inventoryRightHand?: string;
   inventoryLeftHand?: string;
   inventorySlot3?: string;

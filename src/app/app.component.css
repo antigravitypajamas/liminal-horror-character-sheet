@@ -32,6 +32,7 @@ h2 {
 .armor-and-stability {
   display: flex;
   flex-flow: row;
+  flex-wrap: wrap;
 }
 
 .armor {
@@ -40,6 +41,10 @@ h2 {
 }
 
 .stability {
+  flex: flex-grow;
+}
+
+.cash {
   flex: flex-grow;
 }
 
