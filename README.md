@@ -25,6 +25,7 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 - Status notifications (e.g., you are reduced to 0 HP, a toastr message will appear to prompt you to roll a d20 for fallout, etc.)
 
 ## Future future work
+- Responsive behavior for devices
 - User authentication
 - Backend storage for multiple characters
 - Refactor components
