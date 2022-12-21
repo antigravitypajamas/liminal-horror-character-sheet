@@ -1,5 +1,12 @@
 import { Observable, map, of, tap } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AsyncValidator,
+  AbstractControl,
+  ValidationErrors,
+} from '@angular/forms';
 import { Character } from './models/character';
 import { CharacterStore } from './services/character.store';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
@@ -17,15 +24,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.form = this.fb.group({
       name: ['', Validators.required],
       background: ['', Validators.required],
-      baseStrength: ['', Validators.required],
-      modifiedStrength: [''],
-      baseDexterity: ['', Validators.required],
-      modifiedDexterity: [''],
-      baseControl: ['', Validators.required],
-      modifiedControl: [''],
-      baseHp: ['', Validators.required],
+      baseStrength: ['', [Validators.required]],
+      modifiedStrength: [0, ,],
+      baseDexterity: [0, Validators.required, ,],
+      modifiedDexterity: [0, ,],
+      baseControl: [0, Validators.required, ,],
+      modifiedControl: [0, ,],
+      baseHp: ['', Validators.required, ,],
       modifiedHp: [''],
-      deprived: [''],
+      deprived: [false],
       armor: [''],
       stability: [''],
       inventoryRightHand: [''],
