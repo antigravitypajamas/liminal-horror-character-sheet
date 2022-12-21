@@ -10,12 +10,14 @@ When you clone the repository, open up the project in your favorite editor and i
 The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/liminal-horror-character-sheet/).
 
 ## Known Issues
-- The "Notes" section doesn't render the markdown in Preview mode
 - The "Notes" section doesn't scrub the input before storage
 
 ## Resolved issues
 - Stability is no longer a required field
 - Name and Background are required fields
+- The Notes section Preview mode works
+- Stat validation makes it impossible to save negative values
+- Stats default to 0 making it possible to save your character by just inputting a Name and Background
 
 ## Upcoming work
 - Clear validation messaging
