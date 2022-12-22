@@ -11,20 +11,22 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 
 ## Known Issues
 - The "Notes" section doesn't scrub the input before storage
+- Stats don't properly default to 0 on first load, forcing the user to fill out the entire sheet before saving
+- Saving does not generate a message notifying the user that their character has been saved successfully
 
 ## Resolved issues
 - Stability is no longer a required field
 - Name and Background are required fields
 - The Notes section Preview mode works
 - Stat validation makes it impossible to save negative values
-- Stats default to 0 making it possible to save your character by just inputting a Name and Background
 
 ## Upcoming work
+- Status notifications (e.g., successful save of your sheet, or for example you are reduced to 0 HP, a toastr message will appear to prompt you to roll a d20 for fallout, etc.)
 - Clear validation messaging
 - Finishing work on Notes (e.g., XSS prevention, etc.)
 - Disabling inventory slots when Fatigued
 - Dark theme
-- Status notifications (e.g., you are reduced to 0 HP, a toastr message will appear to prompt you to roll a d20 for fallout, etc.)
+
 
 ## Future future work
 - Responsive behavior for devices
