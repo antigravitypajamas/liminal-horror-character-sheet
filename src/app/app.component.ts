@@ -314,10 +314,10 @@ export class AppComponent implements OnInit, AfterContentInit {
     this.listenForFatigue();
 
     this.form.get('modifiedHp')?.valueChanges.subscribe((value) => {
-      if (value === 0) {
+      if (value <= 0) {
         this.notificationService.showWarning(
           'Roll for Fallout!',
-          "You've been reduced to 0 HP!"
+          `You've been reduced to ${value} HP!`
         );
       }
     });
