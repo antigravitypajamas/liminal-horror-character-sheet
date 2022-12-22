@@ -1,4 +1,3 @@
-import { ZeroHpValidator } from './services/zero-hp.validator';
 import { NotificationService } from './services/notification.service';
 import { MarkdownService } from 'ngx-markdown';
 import { LessThanZeroValidator } from './services/less-than-zero.validator';
@@ -26,8 +25,7 @@ export class AppComponent implements OnInit, AfterContentInit {
     private fb: FormBuilder,
     private lessThanZeroValidator: LessThanZeroValidator,
     private markdownService: MarkdownService,
-    private notificationService: NotificationService,
-    private zeroHpValidator: ZeroHpValidator
+    private notificationService: NotificationService
   ) {
     this.form = this.fb.group({
       name: ['', [Validators.required]],
@@ -262,7 +260,6 @@ export class AppComponent implements OnInit, AfterContentInit {
             this.lessThanZeroValidator.validate.bind(
               this.lessThanZeroValidator
             ),
-            this.zeroHpValidator.validate.bind(this.zeroHpValidator),
           ],
           updateOn: 'blur',
         },
@@ -382,6 +379,15 @@ export class AppComponent implements OnInit, AfterContentInit {
         this.form.get('inventorySlot10')?.disable();
       } else {
         this.form.get('inventorySlot10')?.enable();
+      }
+    });
+
+    this.form.get('modifiedHp')?.valueChanges.subscribe((value) => {
+      if (value === 0) {
+        this.notificationService.showWarning(
+          'Roll for Fallout!',
+          "You've been reduced to 0 HP!"
+        );
       }
     });
   }
