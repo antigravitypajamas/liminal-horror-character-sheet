@@ -173,7 +173,5 @@ h2 {
 
 .legal p {
   text-align: center;
-}
-
-.legal img {
+  width: 100%;
 }
