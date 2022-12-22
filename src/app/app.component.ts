@@ -171,7 +171,7 @@ export class AppComponent implements OnInit, AfterContentInit {
       name: [this.character.name],
       background: [this.character.background],
       baseStrength: [
-        this.character.baseStrength,
+        this.character.baseStrength ? this.character.baseStrength : 0,
         {
           validators: [Validators.required],
           asyncValidators: [
@@ -194,7 +194,7 @@ export class AppComponent implements OnInit, AfterContentInit {
         },
       ],
       baseDexterity: [
-        this.character.baseDexterity,
+        this.character.baseDexterity ? this.character.baseDexterity : 0,
         {
           validators: [Validators.required],
           asyncValidators: [
@@ -217,7 +217,7 @@ export class AppComponent implements OnInit, AfterContentInit {
         },
       ],
       baseControl: [
-        this.character.baseControl,
+        this.character.baseControl ? this.character.baseControl : 0,
         {
           validators: [Validators.required],
           asyncValidators: [
@@ -240,7 +240,7 @@ export class AppComponent implements OnInit, AfterContentInit {
         },
       ],
       baseHp: [
-        this.character.baseHp,
+        this.character.baseHp ? this.character.baseHp : 0,
         {
           validators: [Validators.required],
           asyncValidators: [
