@@ -23,10 +23,10 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 - If an Inventory slot is disabled by Fatigue, the sheet is saved, and the page refreshed, the Inventory slot will remain disabled
 
 ## Upcoming work
-- Clear validation messaging
-- Finishing work on Notes (e.g., XSS prevention, etc.)
-- Dark theme
 - Responsive behavior for devices
+- Finishing work on Notes (e.g., XSS prevention, etc.)
+- Clear validation messaging
+- Dark theme
 
 ## Future future work
 - User authentication
