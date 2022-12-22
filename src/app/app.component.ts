@@ -164,8 +164,6 @@ export class AppComponent implements OnInit, AfterContentInit {
     this.editorOptions = {
       parser: (val) => this.markdownService.parse(val.trim()),
     };
-
-    //this.char$.subscribe();
   }
 
   ngAfterContentInit(): void {
@@ -311,6 +309,89 @@ export class AppComponent implements OnInit, AfterContentInit {
       notes: [this.character.notes],
     });
 
+    this.loadFatigue();
+
+    this.listenForFatigue();
+
+    this.form.get('modifiedHp')?.valueChanges.subscribe((value) => {
+      if (value === 0) {
+        this.notificationService.showWarning(
+          'Roll for Fallout!',
+          "You've been reduced to 0 HP!"
+        );
+      }
+    });
+  }
+
+  saveCharacter() {
+    const changes = this.form.value;
+
+    this.char$ = this.characterStore.saveCharacter(changes);
+    this.notificationService.showSuccess('Character saved successfully!');
+  }
+
+  private loadFatigue(): void {
+    if (this.form.get('fatigue1')?.value) {
+      this.form.get('inventoryRightHand')?.disable();
+    } else {
+      this.form.get('inventoryRightHand')?.enable();
+    }
+
+    if (this.form.get('fatigue2')?.value) {
+      this.form.get('inventoryLeftHand')?.disable();
+    } else {
+      this.form.get('inventoryLeftHand')?.enable();
+    }
+
+    if (this.form.get('fatigue3')?.value) {
+      this.form.get('inventorySlot3')?.disable();
+    } else {
+      this.form.get('inventorySlot3')?.enable();
+    }
+    if (this.form.get('fatigue4')?.value) {
+      this.form.get('inventorySlot4')?.disable();
+    } else {
+      this.form.get('inventorySlot4')?.enable();
+    }
+
+    if (this.form.get('fatigue5')?.value) {
+      this.form.get('inventorySlot5')?.disable();
+    } else {
+      this.form.get('inventorySlot5')?.enable();
+    }
+
+    if (this.form.get('fatigue6')?.value) {
+      this.form.get('inventorySlot6')?.disable();
+    } else {
+      this.form.get('inventorySlot6')?.enable();
+    }
+
+    if (this.form.get('fatigue7')?.value) {
+      this.form.get('inventorySlot7')?.disable();
+    } else {
+      this.form.get('inventorySlot7')?.enable();
+    }
+
+    if (this.form.get('fatigue8')?.value) {
+      this.form.get('inventorySlot8')?.disable();
+    } else {
+      this.form.get('inventorySlot8')?.enable();
+    }
+
+    if (this.form.get('fatigue9')?.value) {
+      this.form.get('inventorySlot9')?.disable();
+    } else {
+      this.form.get('inventorySlot9')?.enable();
+    }
+
+    if (this.form.get('fatigue10')?.value) {
+      this.form.get('inventorySlot10')?.disable();
+    } else {
+      this.form.get('inventorySlot10')?.enable();
+    }
+  }
+
+  private listenForFatigue(): void {
     this.form.get('fatigue1')?.valueChanges.subscribe((value) => {
       if (value) {
         this.form.get('inventoryRightHand')?.disable();
@@ -381,21 +462,5 @@ export class AppComponent implements OnInit, AfterContentInit {
         this.form.get('inventorySlot10')?.enable();
       }
     });
-
-    this.form.get('modifiedHp')?.valueChanges.subscribe((value) => {
-      if (value === 0) {
-        this.notificationService.showWarning(
-          'Roll for Fallout!',
-          "You've been reduced to 0 HP!"
-        );
-      }
-    });
-  }
-
-  saveCharacter() {
-    const changes = this.form.value;
-
-    this.char$ = this.characterStore.saveCharacter(changes);
-    this.notificationService.showSuccess('Character saved successfully!');
   }
 }
