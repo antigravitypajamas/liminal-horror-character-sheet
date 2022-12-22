@@ -18,7 +18,7 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 - The Notes section Preview mode works
 - Stat validation makes it impossible to save negative values
 - Base stats default to 0 on first load
-- Status notifications service stubbed in. Now when you save you will be notified of success. Also, if your Modified HP drops to 0 you will be notified to roll for Fallout.
+- Status notifications service stubbed in. Now when you save you will be notified of success. Also, if your Modified HP drops to 0 _or below_ you will be notified to roll for Fallout.
 - Inventory slots become disabled when the corresponding Fatigued checkbox is checked
 - If an Inventory slot is disabled by Fatigue, the sheet is saved, and the page refreshed, the Inventory slot will remain disabled
 - Responsive in the browser and more usable on devices than before. 
