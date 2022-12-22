@@ -21,6 +21,7 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 - Status notifications service stubbed in. Now when you save you will be notified of success. Also, if your Modified HP drops to 0 you will be notified to roll for Fallout.
 - Inventory slots become disabled when the corresponding Fatigued checkbox is checked
 - If an Inventory slot is disabled by Fatigue, the sheet is saved, and the page refreshed, the Inventory slot will remain disabled
+- Responsive in the browser and more usable on devices than before. 
 
 ## Upcoming work
 - Responsive behavior for devices _(in progress)_
