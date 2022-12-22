@@ -10,6 +10,7 @@ When you clone the repository, open up the project in your favorite editor and i
 The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/liminal-horror-character-sheet/).
 
 ## Known Issues
+- Inventory items do not remain disabled after refresh even though Fatigue is still checked
 - The "Notes" section doesn't scrub the input before storage
 
 ## Resolved issues 
