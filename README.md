@@ -25,9 +25,9 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 - Clear validation messaging
 - Finishing work on Notes (e.g., XSS prevention, etc.)
 - Dark theme
+- Responsive behavior for devices
 
 ## Future future work
-- Responsive behavior for devices
 - User authentication
 - Backend storage for multiple characters
 - Refactor components for reusability
