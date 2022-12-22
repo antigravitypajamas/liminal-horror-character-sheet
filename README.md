@@ -10,7 +10,6 @@ When you clone the repository, open up the project in your favorite editor and i
 The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/liminal-horror-character-sheet/).
 
 ## Known Issues
-- Inventory items do not remain disabled after refresh even though Fatigue is still checked
 - The "Notes" section doesn't scrub the input before storage
 
 ## Resolved issues 
@@ -21,6 +20,7 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 - Base stats default to 0 on first load
 - Status notifications service stubbed in. Now when you save you will be notified of success. Also, if your Modified HP drops to 0 you will be notified to roll for Fallout.
 - Inventory slots become disabled when the corresponding Fatigued checkbox is checked
+- If an Inventory slot is disabled by Fatigue, the sheet is saved, and the page refreshed, the Inventory slot will remain disabled
 
 ## Upcoming work
 - Clear validation messaging
