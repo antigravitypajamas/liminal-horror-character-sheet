@@ -2,7 +2,6 @@ import {
   AsyncValidator,
   AbstractControl,
   ValidationErrors,
-  AsyncValidatorFn,
 } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { Observable, map, of, catchError } from 'rxjs';

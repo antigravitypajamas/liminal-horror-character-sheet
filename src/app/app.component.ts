@@ -1,10 +1,12 @@
+import { ZeroHpValidator } from './services/zero-hp.validator';
+import { NotificationService } from './services/notification.service';
 import { MarkdownService } from 'ngx-markdown';
 import { LessThanZeroValidator } from './services/less-than-zero.validator';
-import { Observable, map, of, tap } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Character } from './models/character';
 import { CharacterStore } from './services/character.store';
-import { AfterContentInit, Component, OnInit, Inject } from '@angular/core';
+import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { EditorOption } from 'angular-markdown-editor';
 
 @Component({
@@ -23,7 +25,9 @@ export class AppComponent implements OnInit, AfterContentInit {
     private characterStore: CharacterStore,
     private fb: FormBuilder,
     private lessThanZeroValidator: LessThanZeroValidator,
-    private markdownService: MarkdownService
+    private markdownService: MarkdownService,
+    private notificationService: NotificationService,
+    private zeroHpValidator: ZeroHpValidator
   ) {
     this.form = this.fb.group({
       name: ['', [Validators.required]],
@@ -258,6 +262,7 @@ export class AppComponent implements OnInit, AfterContentInit {
             this.lessThanZeroValidator.validate.bind(
               this.lessThanZeroValidator
             ),
+            this.zeroHpValidator.validate.bind(this.zeroHpValidator),
           ],
           updateOn: 'blur',
         },
@@ -308,11 +313,83 @@ export class AppComponent implements OnInit, AfterContentInit {
       fatigue10: [this.character.fatigue10],
       notes: [this.character.notes],
     });
+
+    this.form.get('fatigue1')?.valueChanges.subscribe((value) => {
+      if (value) {
+        this.form.get('inventoryRightHand')?.disable();
+      } else {
+        this.form.get('inventoryRightHand')?.enable();
+      }
+    });
+    this.form.get('fatigue2')?.valueChanges.subscribe((value) => {
+      if (value) {
+        this.form.get('inventoryLeftHand')?.disable();
+      } else {
+        this.form.get('inventoryLeftHand')?.enable();
+      }
+    });
+    this.form.get('fatigue3')?.valueChanges.subscribe((value) => {
+      if (value) {
+        this.form.get('inventorySlot3')?.disable();
+      } else {
+        this.form.get('inventorySlot3')?.enable();
+      }
+    });
+    this.form.get('fatigue4')?.valueChanges.subscribe((value) => {
+      if (value) {
+        this.form.get('inventorySlot4')?.disable();
+      } else {
+        this.form.get('inventorySlot4')?.enable();
+      }
+    });
+    this.form.get('fatigue5')?.valueChanges.subscribe((value) => {
+      if (value) {
+        this.form.get('inventorySlot5')?.disable();
+      } else {
+        this.form.get('inventorySlot5')?.enable();
+      }
+    });
+    this.form.get('fatigue6')?.valueChanges.subscribe((value) => {
+      if (value) {
+        this.form.get('inventorySlot6')?.disable();
+      } else {
+        this.form.get('inventorySlot6')?.enable();
+      }
+    });
+    this.form.get('fatigue7')?.valueChanges.subscribe((value) => {
+      if (value) {
+        this.form.get('inventorySlot7')?.disable();
+      } else {
+        this.form.get('inventorySlot7')?.enable();
+      }
+    });
+    this.form.get('fatigue8')?.valueChanges.subscribe((value) => {
+      if (value) {
+        this.form.get('inventorySlot8')?.disable();
+      } else {
+        this.form.get('inventorySlot8')?.enable();
+      }
+    });
+    this.form.get('fatigue9')?.valueChanges.subscribe((value) => {
+      if (value) {
+        this.form.get('inventorySlot9')?.disable();
+      } else {
+        this.form.get('inventorySlot9')?.enable();
+      }
+    });
+    this.form.get('fatigue10')?.valueChanges.subscribe((value) => {
+      if (value) {
+        this.form.get('inventorySlot10')?.disable();
+      } else {
+        this.form.get('inventorySlot10')?.enable();
+      }
+    });
   }
 
   saveCharacter() {
     const changes = this.form.value;
 
     this.char$ = this.characterStore.saveCharacter(changes);
+    this.notificationService.showSuccess('Character saved successfully!');
   }
 }

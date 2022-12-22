@@ -17,6 +17,7 @@ import { CharacterStatComponent } from './character-stat/character-stat.componen
 import { InventorySlotComponent } from './inventory-slot/inventory-slot.component';
 import { MarkdownEditorContainerComponent } from './markdown-editor-container/markdown-editor-container.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,11 @@ import { MarkdownModule } from 'ngx-markdown';
     MatInputModule,
     ReactiveFormsModule,
     MarkdownModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      timeOut: 5000,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
