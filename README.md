@@ -23,7 +23,7 @@ The app is hosted via GitHub Pages [here](https://antigravitypajamas.github.io/l
 - If an Inventory slot is disabled by Fatigue, the sheet is saved, and the page refreshed, the Inventory slot will remain disabled
 
 ## Upcoming work
-- Responsive behavior for devices
+- Responsive behavior for devices _(in progress)_
 - Finishing work on Notes (e.g., XSS prevention, etc.)
 - Clear validation messaging
 - Dark theme
@@ -45,6 +45,6 @@ Liminal Horror is copyright by Goblin Archives LLC.
 
 Liminal Horror can be purchased [here](https://goblinarchives.itch.io/liminal-horror).
 
-Modules by antigravity.pajamas can be found [here](https://antigravitypajamas.itch.io/)
-
 Consider making a donation to support this project [here](https://ko-fi.com/antigravitypajamas).
+
+Modules by antigravity.pajamas can be found [here](https://antigravitypajamas.itch.io/)
