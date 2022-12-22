@@ -11,22 +11,22 @@
     </p>
     <!-- <button mat-button color="primary" (click)="(saveCharacter)"></button> -->
 
-    <button
-      class="submit-button"
-      mat-raised-button
-      color="primary"
-      #saveButton
-      (click)="saveCharacter()"
-      [disabled]="!form.valid"
-    >
-      Save
-    </button>
     <div class="name">
       <!-- <character-name></character-name> -->
       <mat-form-field class="full-width">
         <mat-label>NAME</mat-label>
         <input matInput type="text" formControlName="name" />
       </mat-form-field>
+      <button
+        class="submit-button"
+        mat-raised-button
+        color="primary"
+        #saveButton
+        (click)="saveCharacter()"
+        [disabled]="!form.valid"
+      >
+        Save
+      </button>
     </div>
     <div class="background">
       <!-- <background></background> -->
@@ -354,6 +354,7 @@
         [rows]="12"
         formControlName="notes"
         [options]="editorOptions"
+        class="markdown-editor"
       ></angular-markdown-editor>
     </div>
     <div class="legal">

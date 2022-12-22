@@ -1,5 +1,6 @@
 h2 {
   margin-left: 3.5rem;
+  margin-top: 3.5rem;
 }
 
 :host ::ng-deep .mat-mdc-form-field-infix {
@@ -12,7 +13,8 @@ h2 {
   flex-flow: row;
   align-items: stretch;
   flex-wrap: wrap;
-  min-width: 960px;
+  /* max-width: 960px; */
+  width: 100%;
 }
 
 .left-side {
@@ -45,7 +47,7 @@ h2 {
 }
 
 .cash {
-  flex: flex-grow;
+  flex-basis: 50%;
 }
 
 .deprived {
@@ -114,9 +116,9 @@ h2 {
 }
 
 .submit-button {
-  margin-bottom: 1rem;
-  margin-right: 4rem;
-  float: right;
+  margin-left: 1rem;
+  /* flex-basis: 30%; */
+  justify-self: flex-end;
   padding: 0px 20px;
 }
 
@@ -149,8 +151,13 @@ h2 {
   flex: flex-shrink;
 }
 
+.name {
+  display: flex;
+  flex-flow: row;
+}
+
 .name .mat-mdc-form-field {
-  width: 20rem;
+  flex-basis: 75%;
 }
 
 .background .mat-mdc-form-field {
@@ -174,4 +181,12 @@ h2 {
 .legal p {
   text-align: center;
   width: 100%;
+}
+
+.markdown-editor {
+  display: flex;
+}
+
+:host ::ng-deep .md-editor {
+  flex-basis: 94%;
 }
