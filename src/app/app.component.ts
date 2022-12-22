@@ -172,8 +172,8 @@ export class AppComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     this.form = this.fb.group({
-      name: [this.character.name],
-      background: [this.character.background],
+      name: [this.character.name, Validators.required],
+      background: [this.character.background, Validators.required],
       baseStrength: [
         this.character.baseStrength ? this.character.baseStrength : 0,
         {
