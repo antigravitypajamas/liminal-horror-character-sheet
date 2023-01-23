@@ -1,7 +1,18 @@
 <h2>Liminal Horror Character Sheet</h2>
 <!-- <div class="container"> -->
 <div toastContainer></div>
+
 <div [formGroup]="form" class="container">
+  <mat-drawer-container class="sidenav-container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+      <h4>Appendicies</h4>
+    </mat-drawer>
+    <div class="sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </mat-drawer-container>
   <div class="left-side">
     <p class="release-note">
       <span class="state">ALPHA v 0.3:</span> This character sheet currently
